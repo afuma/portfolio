@@ -1,0 +1,10 @@
+<svg width="400" height="250" xmlns="http://www.w3.org/2000/svg">
+    <rect width="400" height="250" fill="#fef3c7"/>
+    <rect x="50" y="50" width="300" height="150" fill="#f59e0b" rx="10"/>
+    <polygon points="200,80 220,120 180,120" fill="#d97706"/>
+    <rect x="160" y="130" width="80" height="8" fill="#d97706" rx="4"/>
+    <rect x="140" y="150" width="120" height="8" fill="#d97706" rx="4"/>
+    <circle cx="120" cy="100" r="8" fill="#d97706"/>
+    <circle cx="280" cy="100" r="8" fill="#d97706"/>
+    <text x="200" y="220" text-anchor="middle" fill="#b45309" font-size="16" font-weight="bold">Projet 3</text>
+</svg>

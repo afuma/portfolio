@@ -1,0 +1,9 @@
+<svg width="400" height="250" xmlns="http://www.w3.org/2000/svg">
+    <rect width="400" height="250" fill="#ddd6fe"/>
+    <rect x="50" y="50" width="300" height="150" fill="#8b5cf6" rx="10"/>
+    <circle cx="100" cy="100" r="15" fill="#a855f7"/>
+    <rect x="130" y="90" width="100" height="8" fill="#a855f7" rx="4"/>
+    <rect x="130" y="110" width="150" height="8" fill="#a855f7" rx="4"/>
+    <rect x="130" y="130" width="80" height="8" fill="#a855f7" rx="4"/>
+    <text x="200" y="220" text-anchor="middle" fill="#6b21a8" font-size="16" font-weight="bold">Projet 1</text>
+</svg>

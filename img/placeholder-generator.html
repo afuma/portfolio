@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de Placeholders</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .placeholder {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .placeholder h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .download-btn {
+            background: #2563eb;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .download-btn:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+    <h1>Générateur de Placeholders pour Portfolio</h1>
+    <p>Cliquez sur les boutons pour télécharger les images placeholder.</p>
+
+    <div class="placeholder">
+        <h3>Photo de profil (250x250)</h3>
+        <svg width="250" height="250" id="profile">
+            <rect width="250" height="250" fill="#e2e8f0"/>
+            <circle cx="125" cy="100" r="40" fill="#94a3b8"/>
+            <path d="M85 160 Q85 140 125 140 Q165 140 165 160 L165 200 L85 200 Z" fill="#94a3b8"/>
+            <text x="125" y="230" text-anchor="middle" fill="#64748b" font-size="14">Photo de profil</text>
+        </svg>
+        <br>
+        <button class="download-btn" onclick="downloadSVG('profile', 'profile.jpg')">Télécharger</button>
+    </div>
+
+    <div class="placeholder">
+        <h3>Projet 1 (400x250)</h3>
+        <svg width="400" height="250" id="project1">
+            <rect width="400" height="250" fill="#ddd6fe"/>
+            <rect x="50" y="50" width="300" height="150" fill="#8b5cf6" rx="10"/>
+            <circle cx="100" cy="100" r="15" fill="#a855f7"/>
+            <rect x="130" y="90" width="100" height="8" fill="#a855f7" rx="4"/>
+            <rect x="130" y="110" width="150" height="8" fill="#a855f7" rx="4"/>
+            <rect x="130" y="130" width="80" height="8" fill="#a855f7" rx="4"/>
+            <text x="200" y="220" text-anchor="middle" fill="#6b21a8" font-size="16" font-weight="bold">Projet 1</text>
+        </svg>
+        <br>
+        <button class="download-btn" onclick="downloadSVG('project1', 'project1.jpg')">Télécharger</button>
+    </div>
+
+    <div class="placeholder">
+        <h3>Projet 2 (400x250)</h3>
+        <svg width="400" height="250" id="project2">
+            <rect width="400" height="250" fill="#dcfce7"/>
+            <rect x="50" y="50" width="300" height="150" fill="#22c55e" rx="10"/>
+            <rect x="80" y="80" width="60" height="40" fill="#16a34a" rx="5"/>
+            <rect x="160" y="80" width="60" height="40" fill="#16a34a" rx="5"/>
+            <rect x="240" y="80" width="60" height="40" fill="#16a34a" rx="5"/>
+            <rect x="80" y="140" width="220" height="20" fill="#16a34a" rx="10"/>
+            <text x="200" y="220" text-anchor="middle" fill="#15803d" font-size="16" font-weight="bold">Projet 2</text>
+        </svg>
+        <br>
+        <button class="download-btn" onclick="downloadSVG('project2', 'project2.jpg')">Télécharger</button>
+    </div>
+
+    <div class="placeholder">
+        <h3>Projet 3 (400x250)</h3>
+        <svg width="400" height="250" id="project3">
+            <rect width="400" height="250" fill="#fef3c7"/>
+            <rect x="50" y="50" width="300" height="150" fill="#f59e0b" rx="10"/>
+            <polygon points="200,80 220,120 180,120" fill="#d97706"/>
+            <rect x="160" y="130" width="80" height="8" fill="#d97706" rx="4"/>
+            <rect x="140" y="150" width="120" height="8" fill="#d97706" rx="4"/>
+            <circle cx="120" cy="100" r="8" fill="#d97706"/>
+            <circle cx="280" cy="100" r="8" fill="#d97706"/>
+            <text x="200" y="220" text-anchor="middle" fill="#b45309" font-size="16" font-weight="bold">Projet 3</text>
+        </svg>
+        <br>
+        <button class="download-btn" onclick="downloadSVG('project3', 'project3.jpg')">Télécharger</button>
+    </div>
+
+    <script>
+        function downloadSVG(svgId, filename) {
+            const svg = document.getElementById(svgId);
+            const svgData = new XMLSerializer().serializeToString(svg);
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            
+            canvas.width = svg.getAttribute('width');
+            canvas.height = svg.getAttribute('height');
+            
+            img.onload = function() {
+                ctx.drawImage(img, 0, 0);
+                const link = document.createElement('a');
+                link.download = filename;
+                link.href = canvas.toDataURL('image/jpeg', 0.9);
+                link.click();
+            };
+            
+            img.src = 'data:image/svg+xml;base64,' + btoa(svgData);
+        }
+    </script>
+</body>
+</html>
