@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SudokuResolver</title>
+  <link rel="stylesheet" href="../css/project.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <h2>Mon Portfolio</h2>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="../../index.html#accueil" class="nav-link">Accueil</a></li>
+        <li class="nav-item"><a href="../../index.html#a-propos" class="nav-link">À propos</a></li>
+        <li class="nav-item"><a href="../../index.html#projets" class="nav-link">Projets</a></li>
+        <li class="nav-item"><a href="../../index.html#competences" class="nav-link">Compétences</a></li>
+        <li class="nav-item"><a href="../../faq.html" class="nav-link">FAQ</a></li>
+        <li class="nav-item"><a href="../../index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Section fusionnée : Teaser + Présentation -->
+  <section class="project-overview">
+    <div class="container">
+      <!-- Teaser en haut -->
+      <div class="project-teaser">
+        <h1 class="project-title">SudokuResolver</h1>
+        <p class="project-tagline">Résolution automatique d'une grille de sudoku 9x9</p>
+        <div class="project-buttons">
+          <a href="https://github.com/afuma/Sudoku-Resolver" target="_blank" class="btn btn-primary">
+            <i class="fab fa-github"></i> Voir le code
+          </a>
+          <button class="btn btn-secondary video-demo-btn">
+            <i class="fas fa-play"></i> Démo en ligne
+          </button>
+        </div>
+      </div>
+
+      <!-- Présentation en dessous -->
+      <div class="project-presentation">
+        <div class="presentation-content">
+          <div class="presentation-text">
+            <p><strong>Contexte :</strong>Après l'épreuve d'entrée à l'école 42, je sentais le besoin de perctionner mes notions d'algorithmies, notamment sur le concept de backtracking.</p>
+            <p><strong>Objectif :</strong>Ce projet permet de résoudre des grilles de sudoku tous niveaux confondus - facile, moyen, difficile, expert -</p>
+            <p><strong>Impact :</strong>Ce projet m'as permis d'implémenter de façon concrete et ludique l'algorithme de backtracking</p>
+          </div>
+          <div class="presentation-image">
+            <img src="../../img/sudoku_1.webp" alt="Aperçu du projet" class="project-img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Détails techniques -->
+  <section class="technical-details">
+    <div class="container">
+      <h2 class="section-title">Détails techniques</h2>
+      
+      <!-- Stack en ligne -->
+      <div class="stack-section">
+        <div class="skill-category stack-category">
+          <h3>Stack</h3>
+          <div class="skill-list">
+            <span class="skill-tag">C</span>
+<span class="skill-tag">Algorithme de backtracking</span>
+<span class="skill-tag">Makefile</span>
+<span class="skill-tag">Valgrind</span>
+<span class="skill-tag">Linux/macOS</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Défis et Résultats en ligne -->
+      <div class="details-grid">
+        <div class="skill-category challenges-category">
+          <h3>Défis relevés</h3>
+          <p>• Implémentation efficace de l’algorithme de backtracking<br>
+• Validation stricte des contraintes Sudoku (lignes, colonnes, carrés 3x3)<br>
+• Gestion mémoire et débogage avec Valgrind et AddressSanitizer<br>
+• Optimisation de la compilation (modes debug, optimized)<br>
+• Création d’un Makefile complet avec plusieurs cibles (run, clean, re…)<br></p>
+        </div>
+        <div class="skill-category results-category">
+          <h3>Résultats</h3>
+          <p>• Résolution automatique et fiable de grilles Sudoku 9x9<br>
+• Interface en ligne de commande simple et efficace<br>
+• Code documenté et structuré en fonctions claires<br>
+• Gain de performance grâce aux optimisations (-O2)<br>
+• Base solide pour des améliorations futures (grilles 16x16, interface graphique, génération aléatoire…)<br></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popup vidéo -->
+  <div class="video-modal" id="videoModal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <video id="modalVideo" controls class="modal-video">
+        <source src="../../videos/test.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la lecture de vidéos.
+      </video>
+    </div>
+  </div>
+
+  <!-- Bouton retour -->
+  <section class="back-section">
+    <a href="../../index.html#projets" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Retour aux projets</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Etienne Desaintjean. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="../../js/script.js"></script>
+  <script>
+    // Gestion de la popup vidéo
+    document.addEventListener('DOMContentLoaded', function() {
+      const videoDemoBtn = document.querySelector('.video-demo-btn');
+      const videoModal = document.getElementById('videoModal');
+      const modalVideo = document.getElementById('modalVideo');
+      const modalClose = document.querySelector('.modal-close');
+      const modalOverlay = document.querySelector('.modal-overlay');
+
+      // Ouvrir la popup
+      videoDemoBtn.addEventListener('click', function() {
+        videoModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+
+      // Fermer la popup
+      function closeModal() {
+        videoModal.classList.remove('active');
+        modalVideo.pause();
+        modalVideo.currentTime = 0;
+        document.body.style.overflow = 'auto';
+      }
+
+      modalClose.addEventListener('click', closeModal);
+      modalOverlay.addEventListener('click', closeModal);
+
+      // Fermer avec Escape
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+          closeModal();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

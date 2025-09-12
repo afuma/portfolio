@@ -145,6 +145,127 @@ body {
     flex-wrap: wrap;
 }
 
+/* Section Hero Fusionnée */
+.hero-merged {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-white);
+    padding: 100px 20px 50px;
+    width: 100%;
+    text-align: center;
+    gap: 2rem;
+}
+
+.hero-merged p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 800px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.hero-info h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.hero-info .hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.hero-info .hero-description {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 0;
+}
+
+.hero-image {
+    margin: 1rem 0;
+}
+
+.hero-right {
+    padding-left: 2rem;
+}
+
+.hero-right .situation-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.hero-right .situation-title i {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+
+.hero-right .situation-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.hero-right .situation-item {
+    background: var(--bg-light);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+}
+
+.hero-right .situation-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.hero-right .situation-item.full-width {
+    grid-column: 1 / -1;
+}
+
+.hero-right .situation-icon {
+    background: var(--primary-color);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.hero-right .situation-icon i {
+    font-size: 1.2rem;
+    color: white;
+}
+
+.hero-right .situation-details h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.hero-right .situation-details p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-light);
+    margin: 0;
+}
+
 /* Hero Highlights */
 .hero-highlights {
     display: grid;
@@ -277,8 +398,8 @@ section {
 /* Section À propos */
 .about {
     background: #f1f5f9; /* Gris plus prononcé pour plus de contraste */
-    padding-top: 200px;
-    padding-bottom: 250px;
+    padding-top: 75px;
+    padding-bottom: 100px;
 }
 
 .about-content {
@@ -311,6 +432,8 @@ section {
 /* Section Projets */
 .projects {
     background: var(--bg-white);
+    padding-top: 35px;
+    /* padding-bottom: 100px; */
 }
 
 .projects-grid {
@@ -419,6 +542,17 @@ section {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+}
+
+/* Supprimer le soulignement des liens de projet */
+.project-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-link:hover {
+    text-decoration: none;
+    color: inherit;
 }
 
 /* Section Compétences */
@@ -559,6 +693,54 @@ section {
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+    }
+
+    /* Responsive pour la section hero fusionnée */
+    .hero-merged {
+        padding: 80px 20px 40px;
+    }
+
+    .hero-merged-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .hero-left {
+        order: 1;
+    }
+
+    .hero-right {
+        order: 2;
+        padding-left: 0;
+    }
+
+    .hero-info h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-info .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-info .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-right .situation-title {
+        font-size: 1.6rem;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-right .situation-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        padding: 1.2rem;
+    }
+
+    .hero-right .situation-details {
+        text-align: center;
     }
 
     .hero-highlights {

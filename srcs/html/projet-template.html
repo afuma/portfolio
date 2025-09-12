@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[PROJECT_TITLE]</title>
+  <link rel="stylesheet" href="../../css/project.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <h2>Portfolio - Etienne Desaintjean</h2>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="../../index.html#accueil" class="nav-link">Accueil</a></li>
+        <li class="nav-item"><a href="../../index.html#a-propos" class="nav-link">À propos</a></li>
+        <li class="nav-item"><a href="../../index.html#projets" class="nav-link">Projets</a></li>
+        <li class="nav-item"><a href="../../index.html#competences" class="nav-link">Compétences</a></li>
+        <li class="nav-item"><a href="../../faq.html" class="nav-link">FAQ</a></li>
+        <li class="nav-item"><a href="../../index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Section fusionnée : Teaser + Présentation -->
+  <section class="project-overview">
+    <div class="container">
+      <!-- Teaser en haut -->
+      <div class="project-teaser">
+        <h1 class="project-title">[PROJECT_TITLE]</h1>
+        <p class="project-tagline">[TAGLINE]</p>
+        <div class="project-buttons">
+          <a href="[GITHUB_REPO]" target="_blank" class="btn btn-primary">
+            <i class="fab fa-github"></i> Voir le code
+          </a>
+          <button class="btn btn-secondary video-demo-btn">
+            <i class="fas fa-play"></i> Démo en ligne
+          </button>
+        </div>
+      </div>
+
+      <!-- Présentation en dessous -->
+      <div class="project-presentation">
+        <div class="presentation-content">
+          <div class="presentation-text">
+            <p><strong>Contexte :</strong>[CONTEXT]</p>
+            <p><strong>Objectif :</strong>[GOAL]</p>
+            <p><strong>Impact :</strong>[IMPACT]</p>
+          </div>
+          <div class="presentation-image">
+            <img src="[IMAGE_PREVIEW_PATH]" alt="Aperçu du projet" class="project-img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Détails techniques -->
+  <section class="technical-details">
+    <div class="container">
+      <h2 class="section-title">Détails techniques</h2>
+      
+      <!-- Stack en ligne -->
+      <div class="stack-section">
+        <div class="skill-category stack-category">
+          <h3>Stack</h3>
+          <div class="skill-list">
+            [TAGS]
+          </div>
+        </div>
+      </div>
+
+      <!-- Défis et Résultats en ligne -->
+      <div class="details-grid">
+        <div class="skill-category challenges-category">
+          <h3>Défis relevés</h3>
+          <p>[CHALLENGES]</p>
+        </div>
+        <div class="skill-category results-category">
+          <h3>Résultats</h3>
+          <p>[RESULTS]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popup vidéo -->
+  <div class="video-modal" id="videoModal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <video id="modalVideo" controls class="modal-video">
+        <source src="[VIDEO_PROJECT_PATH]" type="video/mp4">
+        Votre navigateur ne supporte pas la lecture de vidéos.
+      </video>
+    </div>
+  </div>
+
+  <!-- Bouton retour -->
+  <section class="back-section">
+    <a href="../../index.html#projets" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Retour aux projets</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Etienne Desaintjean. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="../../js/script.js"></script>
+  <script>
+    // Gestion de la popup vidéo
+    document.addEventListener('DOMContentLoaded', function() {
+      const videoDemoBtn = document.querySelector('.video-demo-btn');
+      const videoModal = document.getElementById('videoModal');
+      const modalVideo = document.getElementById('modalVideo');
+      const modalClose = document.querySelector('.modal-close');
+      const modalOverlay = document.querySelector('.modal-overlay');
+
+      // Ouvrir la popup
+      videoDemoBtn.addEventListener('click', function() {
+        videoModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+
+      // Fermer la popup
+      function closeModal() {
+        videoModal.classList.remove('active');
+        modalVideo.pause();
+        modalVideo.currentTime = 0;
+        document.body.style.overflow = 'auto';
+      }
+
+      modalClose.addEventListener('click', closeModal);
+      modalOverlay.addEventListener('click', closeModal);
+
+      // Fermer avec Escape
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+          closeModal();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "title": "SudokuResolver",
+  "tagline": "Résolution automatique d'une grille de sudoku 9x9",
+  "context": "Après l'épreuve d'entrée à l'école 42, je sentais le besoin de perctionner mes notions d'algorithmies, notamment sur le concept de backtracking.",
+  "goal": "Ce projet permet de résoudre des grilles de sudoku tous niveaux confondus - facile, moyen, difficile, expert -",
+  "impact": "Ce projet m'as permis d'implémenter de façon concrete et ludique l'algorithme de backtracking",
+  "img_preview_path": "img/sudoku_1.webp",
+  "github_url": "https://github.com/afuma/Sudoku-Resolver",
+  "video_path": "videos/test.mp4",
+  "stack_list": [
+    "C",
+    "Algorithme de backtracking",
+    "Makefile",
+    "Valgrind",
+    "Linux/macOS"
+  ],
+  "challenges_met_list": [
+    "Implémentation efficace de l’algorithme de backtracking",
+    "Validation stricte des contraintes Sudoku (lignes, colonnes, carrés 3x3)",
+    "Gestion mémoire et débogage avec Valgrind et AddressSanitizer",
+    "Optimisation de la compilation (modes debug, optimized)",
+    "Création d’un Makefile complet avec plusieurs cibles (run, clean, re…)"
+  ],
+  "results_list": [
+    "Résolution automatique et fiable de grilles Sudoku 9x9",
+    "Interface en ligne de commande simple et efficace",
+    "Code documenté et structuré en fonctions claires",
+    "Gain de performance grâce aux optimisations (-O2)",
+    "Base solide pour des améliorations futures (grilles 16x16, interface graphique, génération aléatoire…)"
+  ]
+}
