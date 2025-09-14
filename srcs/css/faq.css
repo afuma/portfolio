@@ -81,7 +81,7 @@
 /* Boîtes spéciales */
 .example-box,
 .tools-box {
-    background: #f1f5f9;
+    background: var(--bg-light);
     border-left: 4px solid var(--primary-color);
     padding: 1.5rem;
     margin: 1.5rem 0;
@@ -111,8 +111,8 @@
 
 /* Code inline */
 code {
-    background: #e2e8f0;
-    color: #1e293b;
+    background: var(--border-color);
+    color: var(--text-dark);
     padding: 0.2rem 0.4rem;
     border-radius: 4px;
     font-family: 'Courier New', monospace;
@@ -133,7 +133,7 @@ em {
 
 /* Section bouton retour */
 .back-section {
-    background: #f1f5f9;
+    background: var(--bg-light);
     padding: 60px 0;
     text-align: center;
 }
