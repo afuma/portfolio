@@ -11,6 +11,11 @@ Un portfolio moderne et responsive créé avec HTML, CSS et JavaScript vanilla.
 - **Optimisé pour les performances** - Lazy loading, debouncing
 - **Accessibilité** - Focus states et navigation clavier
 
+## Futures fonctionnalites
+
+- Traduction en plusieurs langues (anglais)
+- Ajout de sections "Etudes", "Jobs", "certifications/diplomes", "Prix et distinctions", "section basique"
+
 ## 📁 Structure du projet
 
 ```
